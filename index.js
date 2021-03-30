@@ -25,6 +25,14 @@ client.connect((err) => {
   const productsCollection = client.db(`${process.env.DB_NAME}`).collection(`${process.env.COLLECTION_NAME}`);
   const ordersCollection = client.db(`${process.env.DB_NAME}`).collection('orders');
   
+  //API for root
+  app.get('/', (req, res)=> {
+    res.send('db working ...')
+  })
+
+
+
+
   //API for adding products by POST
     app.post('/addProduct', (req, res)=> {
         const product = req.body;
