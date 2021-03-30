@@ -78,6 +78,4 @@ client.connect((err) => {
   console.log('DataBase Connected');
 });
 
-app.listen(port, () => {
-  console.log(`Ema-John Server is LIve @ http://localhost:${port}`);
-});
+app.listen(process.env.PORT || port);

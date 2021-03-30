@@ -4,7 +4,8 @@
   "description": "Server application with Express and MongoDB and authorization by firebase to connect with front end with react which is in repo titled ema-john-simple.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
