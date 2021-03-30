@@ -56,7 +56,7 @@ client.connect((err) => {
      productsCollection.find({key: req.params.key})
      .toArray((err, documents)=> {
       console.log(documents); 
-      res.send(documents);
+      res.send(documents[0]);
      })
    })
     
