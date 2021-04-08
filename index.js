@@ -31,8 +31,6 @@ client.connect((err) => {
   })
 
 
-
-
   //API for adding products by POST
     app.post('/addProduct', (req, res)=> {
         const product = req.body;
@@ -44,7 +42,8 @@ client.connect((err) => {
 
     //API for sending data to frontend for all products 
     app.get('/products', (req, res)=> {
-        productsCollection.find({})
+        const search = req.query.search;
+        productsCollection.find({name: {$regex: search}})
         .toArray((err, documents) => {
             res.send(documents);
         })
